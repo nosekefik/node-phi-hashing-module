@@ -8,8 +8,8 @@ extern "C" {
     #include "phi.h"
 }
 
-#define THROW_ERROR_EXCEPTION(x) NanThrowError(x)
-#define THROW_ERROR_EXCEPTION_WITH_STATUS_CODE(x, y) NanThrowError(x, y)
+#define THROW_ERROR_EXCEPTION(x) Nan::ThrowError(x)
+#define THROW_ERROR_EXCEPTION_WITH_STATUS_CODE(x, y) Nan::ThrowError(x, y)
 
 using namespace node;
 using namespace v8;
@@ -29,9 +29,7 @@ Handle<Value> phi(const Nan::FunctionCallbackInfo<v8::Value>& args) {
 
     phi_hash(input, output);
 
-    Nan::ReturnValue(
-        Nan::NewBuffer(output, 32)
-    );
+    Nan::ReturnValue().Set(Nan::NewBuffer(output, 32));
 }
 
 
