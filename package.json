@@ -1,0 +1,21 @@
+{
+  "name": "phi",
+  "version": "1.0.0",
+  "main": "phi",
+  "author": {
+    "name": "Matthew Little",
+    "email": "zone117x@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/upgradeadvice/node-multi-hashing.git"
+  },
+  "dependencies": {
+    "bindings": "*",
+    "nan": "1"
+  },
+  "keywords": [
+    "phi"
+    
+  ]
+}
