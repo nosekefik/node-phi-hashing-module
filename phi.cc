@@ -15,7 +15,7 @@ using namespace node;
 using namespace v8;
 
 NAN_METHOD(phi) {
-    NanScope();
+    Nan::HandleScope scope;    
 
     if (args.Length() < 1)
         return THROW_ERROR_EXCEPTION("You must provide one argument.");
