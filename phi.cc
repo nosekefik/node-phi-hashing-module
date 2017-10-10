@@ -14,7 +14,7 @@ extern "C" {
 using namespace node;
 using namespace v8;
 
-NAN_METHOD(phi){
+Handle<Value> phi(const Arguments& args) {
     Nan::HandleScope scope;    
     if (v8::Argument.Length() < 1)
         return THROW_ERROR_EXCEPTION("You must provide one argument.");
@@ -29,8 +29,8 @@ NAN_METHOD(phi){
 
     phi_hash(input, output);
 
-    NanReturnValue(
-        NanNewBufferHandle(output, 32)
+    Nan::ReturnValue(
+        Nan::NewBuffer(output, 32)
     );
 }
 
