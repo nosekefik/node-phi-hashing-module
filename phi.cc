@@ -14,7 +14,7 @@ extern "C" {
 using namespace node;
 using namespace v8;
 
-NAN_METHOD(phi::const Arguments& args){
+NAN_METHOD(phi){
     Nan::HandleScope scope;    
     if (v8::Argument.Length() < 1)
         return THROW_ERROR_EXCEPTION("You must provide one argument.");
