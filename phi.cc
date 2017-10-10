@@ -14,9 +14,9 @@ extern "C" {
 using namespace node;
 using namespace v8;
 
-Handle<Value> phi(const Arguments& args) {
+Handle<Value> phi(const args) {
     Nan::HandleScope scope;    
-    if (v8::Argument.Length() < 1)
+    if (args.Length() < 1)
         return THROW_ERROR_EXCEPTION("You must provide one argument.");
 
     Local<Object> target = args[0]->ToObject();
