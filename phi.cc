@@ -14,10 +14,9 @@ extern "C" {
 using namespace node;
 using namespace v8;
 
-NAN_METHOD(phi) {
+NAN_METHOD(phi::const Arguments& args){
     Nan::HandleScope scope;    
-
-    if (args.Length() < 1)
+    if (v8::Argument.Length() < 1)
         return THROW_ERROR_EXCEPTION("You must provide one argument.");
 
     Local<Object> target = args[0]->ToObject();
@@ -37,7 +36,7 @@ NAN_METHOD(phi) {
 
 
 void init(Handle<Object> exports) {
-    exports->Set(NanNew<String>("phi"), NanNew<FunctionTemplate>(phi)->GetFunction());
+    exports->Set(Nan::New<String>("phi"), Nan::New<FunctionTemplate>(phi)->GetFunction());
 }
 
 NODE_MODULE(phi, init)
