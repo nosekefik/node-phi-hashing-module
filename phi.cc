@@ -37,7 +37,7 @@ NAN_METHOD(phi) {
 
 
 void init(Handle<Object> exports) {
-    exports->Set(NanNew<String>("phi"), NanNew<FunctionTemplate>(phi1612)->GetFunction());
+    exports->Set(NanNew<String>("phi"), NanNew<FunctionTemplate>(phi)->GetFunction());
 }
 
 NODE_MODULE(phi, init)
