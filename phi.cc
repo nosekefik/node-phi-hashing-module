@@ -11,7 +11,7 @@ extern "C" {
 using namespace node;
 using namespace v8;
 
-void phi (const Nan::FunctionCallbackInfo<v8::Value>& info) {
+NAN_METHOD(phi) {
     Nan::HandleScope scope;    
     if (info.Length() < 1)
         return Nan::ThrowError("You must provide one argument.");
