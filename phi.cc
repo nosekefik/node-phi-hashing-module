@@ -30,7 +30,7 @@ void phi (const Nan::FunctionCallbackInfo<v8::Value>& info) {
 
 
 void init(Handle<Object> exports) {
-    exports->Set(Nan::New<String>("phi"), Nan::New<FunctionTemplate>(phi)->GetFunction());
+    exports->Set(Nan::New<String>("phi"), Nan::New<FunctionTemplate>(phi)->GetFunction().ToLocalChecked());
 }
 
 NODE_MODULE(phi, init)
