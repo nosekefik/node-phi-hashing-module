@@ -25,8 +25,7 @@ void phi (const Nan::FunctionCallbackInfo<v8::Value>& info) {
     char output[32];
 
     phi_hash(input, output);
-
-    info.GetReturnValue().Set(Nan::NewBuffer(output, 32));
+    info.GetReturnValue().Set(Nan::MaybeLocal<v8::Object> Nan::NewBuffer(output, 32));
 }
 
 
