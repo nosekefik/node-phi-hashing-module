@@ -30,8 +30,10 @@ NAN_METHOD(phi) {
 
 
 void init(Handle<Object> exports) {
-    exports->Set(Nan::New<String>("phi"), Nan::GetFunction(Nan::New<v8::FunctionTemplate>(phi)).ToLocalChecked()
-    ));
+    exports->Set(
+        Nan::New<String>("phi").ToLocalChecked(), 
+        Nan::GetFunction(Nan::New<v8::FunctionTemplate>(phi)).ToLocalChecked()
+    );
 }
 
 NODE_MODULE(phi, init)
