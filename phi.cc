@@ -26,7 +26,7 @@ NAN_METHOD(phi) {
 
     phi_hash(input, output);
 
-    info.ReturnValue().Set(Nan::NewBuffer(output, 32));
+    info.GetReturnValue().Set(Nan::NewBuffer(output, 32));
 }
 
 
